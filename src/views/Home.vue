@@ -1,12 +1,15 @@
 <template>
   <div>
-    Home
+    <Landing/>
   </div>
 </template>
 
 <script>
+  import Landing from '../components/PageLanding'
   export default {
-    
+    components: {
+      Landing
+    }
   }
 </script>
 

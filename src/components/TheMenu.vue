@@ -20,7 +20,9 @@
 <style lang="scss" scoped>
 .nav {
   display: flex; 
-  background: rgba(0,0,0,0.8);   
+  // background: rgba(0,0,0,0.8);   
+  background: #000;  
+  opacity: .999;
   backdrop-filter: saturate(180%) blur(20px);
   font-size: 1.1rem; 
   padding: 0.6rem; 
