@@ -1,10 +1,12 @@
 <template>
   <div>
-    Playground
+    <Pens/>
   </div>
 </template>
 
-<script>
+<script> 
+  import Pens from '../components/Pens'
+
   export default {
     data() { 
       pens: [
@@ -13,6 +15,9 @@
         {url: 'https://codepen.io/calebgibbs/pen/XqoLEJ'}, 
         {url: 'https://codepen.io/calebgibbs/details/bMzvea'}
       ]
+    }, 
+    components: {
+      Pens
     }
   }
 </script>
