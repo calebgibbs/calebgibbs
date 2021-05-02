@@ -26,4 +26,56 @@
   @media (min-width: 1800px) { 
     @content; 
   }
+}  
+
+//desktop  
+
+@mixin desktop {
+  @media (min-width: 1281px) { 
+    @content; 
+  }
+}
+
+//laptops    
+
+@mixin desktop-large { 
+  @media (min-width: 1281px) {
+    @content;
+  }
+}
+
+@mixin desktop-small {
+  @media (min-width: 1025px) and (max-width: 1280px) { 
+    @content; 
+  }
+}
+
+//tablets   
+
+@mixin tablet-landscape {
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) { 
+    @content; 
+  }
+}
+
+@mixin tablet-portait {
+  @media (min-width: 768px) and (max-width: 1024px) { 
+    @content; 
+  }
 } 
+
+
+
+//mobile  
+
+@mixin mobile-landscape {
+  @media (min-width: 481px) and (max-width: 767px) { 
+    @content; 
+  }
+} 
+
+@mixin mobile-portait {
+  @media (min-width: 320px) and (max-width: 480px) { 
+    @content; 
+  }
+}

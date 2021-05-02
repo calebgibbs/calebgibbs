@@ -8,6 +8,9 @@
             <span class="title">{{pen.title}}</span>  
             <v-icon name="code-branch" label="Forked Repository"/>
             <img class="external-link" src="../assets/images/icons/external-link.svg" alt="external link">
+          </div> 
+          <div>
+            <span><small>{{ pen.pubDate | limit-10 }}</small></span>
           </div>
         </div>
       </a>
@@ -34,10 +37,30 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped> 
+@import '../assets/styles/mediaqueries';
 .pens-grid {
-  display: grid; 
-  grid-template-columns: repeat(4, 1fr);  
+  display: grid;  
+  
+  @include desktop-large {
+    grid-template-columns: repeat(4, 1fr);
+  } 
+  @include desktop-small {
+    grid-template-columns: repeat(4, 1fr);
+  } 
+  @include tablet-landscape {
+    grid-template-columns: repeat(4, 1fr);
+  } 
+  @include tablet-portait {
+    grid-template-columns: repeat(3, 1fr);
+  } 
+  @include mobile-landscape {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+  @include mobile-portait {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   grid-gap: 2em;
   width: 90%; 
   margin: 0 auto; 
@@ -47,7 +70,7 @@
 a { 
   text-decoration: none; 
 }
-  
+
 .pen { 
   color: #000; 
   padding: .5em; 
@@ -66,7 +89,7 @@ a {
 
   &:hover .external-link {
     opacity: 1; 
-  }
+  } 
 }  
 
 .external-link { 
