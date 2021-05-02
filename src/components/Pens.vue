@@ -4,7 +4,10 @@
       <a :href="pen.link" target="_blank">
         <div class="pen">
           <img :src="pen.thumbnail" alt="thumbnail" style="width: 100%"> 
-          <h4>{{pen.title}}</h4> 
+          <div class="pen-text">
+            <span class="title">{{pen.title}}</span> 
+            <span class="date"><small>{{ pen.pubDate | limit-10}}</small></span>
+          </div>
         </div>
       </a>
     </div>
@@ -50,12 +53,17 @@ a {
   color: #000; 
   padding: .5em; 
   background: #f9f9f9;  
-  transition: transform 0.2s; 
+  transition: transform 0.2s;  
+
+  &-text {
+    display: flex; 
+    justify-content: space-around;
+  }
 
   &:hover {
     transform: scale(1.03);
   }
-} 
+}  
 
 h4 { 
   margin: .1em; 
