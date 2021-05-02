@@ -3,14 +3,15 @@
     <div v-for="pen in pens.items" :key="pen.url">
       <a :href="pen.link" target="_blank">
         <div class="pen">
-          <img :src="pen.thumbnail" alt="thumbnail" style="width: 100%"> 
+          <div class="pen-img-container">
+            <img :src="pen.thumbnail" alt="thumbnail" style="width: 100%" class="pen-img"> 
+          </div>
           <div class="pen-text">
             <span class="title">{{pen.title}}</span>  
-            <v-icon name="code-branch" label="Forked Repository"/>
-            <img class="external-link" src="../assets/images/icons/external-link.svg" alt="external link">
           </div> 
-          <div>
+          <div class="date">
             <span><small>{{ pen.pubDate | limit-10 }}</small></span>
+            <img class="external-link" src="../assets/images/icons/external-link.svg" alt="external link">
           </div>
         </div>
       </a>
@@ -38,9 +39,16 @@
 </script>
 
 <style lang="scss" scoped> 
-@import '../assets/styles/mediaqueries';
+@import '../assets/styles/mediaqueries'; 
+
+$cardTransition: 0.2s;
+
 .pens-grid {
-  display: grid;  
+  display: grid; 
+  grid-gap: 2em;
+  width: 90%; 
+  margin: 0 auto; 
+  margin-top: 4em; 
   
   @include desktop-large {
     grid-template-columns: repeat(4, 1fr);
@@ -59,13 +67,15 @@
   } 
   @include mobile-portait {
     grid-template-columns: repeat(1, 1fr);
-  }
+  } 
+}   
 
-  grid-gap: 2em;
-  width: 90%; 
-  margin: 0 auto; 
-  margin-top: 4em; 
-}  
+.pen-img-container {
+  overflow: hidden; 
+  img {
+    transition: transform $cardTransition;
+  }
+}
 
 a { 
   text-decoration: none; 
@@ -75,8 +85,9 @@ a {
   color: #000; 
   padding: .5em; 
   background: #f9f9f9;  
-  transition: transform 0.2s;   
-  font-size: 1em;
+  transition: transform $cardTransition;   
+  font-size: 1em; 
+  overflow: hidden;
 
   &-text {
     display: flex; 
@@ -85,16 +96,25 @@ a {
 
   &:hover {
     transform: scale(1.03);
-  } 
+  }  
 
-  &:hover .external-link {
+  &:hover .pen-img {
+    transform: scale(1.05); 
+  }
+  
+  &:hover .date {
     opacity: 1; 
-  } 
+  }
 }  
 
-.external-link { 
-  height: 1em; 
+.date { 
   opacity: 0; 
-  transition: opacity 0.3s;
+  transition: opacity $cardTransition; 
+  display: flex; 
+  justify-content: space-between;  
+  color: #606060;
+  img { 
+    width: 1em;
+  }
 }
 </style>
