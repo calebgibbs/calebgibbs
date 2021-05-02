@@ -1,14 +1,14 @@
 <template>
   <div>
-    <Landing/>
+    <Hero/> 
   </div>
 </template>
 
 <script>
-  import Landing from '../components/PageLanding'
+  import Hero from '../components/HomeHero' 
   export default {
     components: {
-      Landing
+      Hero
     }
   }
 </script>
