@@ -5,15 +5,15 @@
         <div class="pen">
           <img :src="pen.thumbnail" alt="thumbnail" style="width: 100%"> 
           <div class="pen-text">
-            <span class="title">{{pen.title}}</span> 
-            <span class="date"><small>{{ pen.pubDate | limit-10}}</small></span>
+            <span class="title">{{pen.title}}</span>  
+            <v-icon name="code-branch" label="Forked Repository"/>
+            <img class="external-link" src="../assets/images/icons/external-link.svg" alt="external link">
           </div>
         </div>
       </a>
     </div>
   </div>
 </template>
-
 <script>  
   const publicFeed = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fcodepen.io%2Fcalebgibbs%2Fpublic%2Ffeed' 
   const popularFeed = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fcodepen.io%2Fcalebgibbs%2Fpopular%2Ffeed%2F'
@@ -35,7 +35,6 @@
 </script>
 
 <style lang="scss" scoped>
-
 .pens-grid {
   display: grid; 
   grid-template-columns: repeat(4, 1fr);  
@@ -48,26 +47,31 @@
 a { 
   text-decoration: none; 
 }
-
+  
 .pen { 
   color: #000; 
   padding: .5em; 
   background: #f9f9f9;  
-  transition: transform 0.2s;  
+  transition: transform 0.2s;   
+  font-size: 1em;
 
   &-text {
     display: flex; 
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   &:hover {
     transform: scale(1.03);
+  } 
+
+  &:hover .external-link {
+    opacity: 1; 
   }
 }  
 
-h4 { 
-  margin: .1em; 
-  font-weight: lighter;
+.external-link { 
+  height: 1em; 
+  opacity: 0; 
+  transition: opacity 0.3s;
 }
-
 </style>
