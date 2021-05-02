@@ -1,33 +1,35 @@
 <template>
-  <div class="nav">
+  <div class="nav full-menu">
     <div class="logo">
       <router-link to="/">CG</router-link>
-    </div> 
-    <div class="links">
+    </div>  
+    <div class="menu-toggle"> 
+      <button @click="menuToggle"><img src="../assets/images/icons/menu.svg" alt="menu"></button>
+    </div>
+    <div  :class="{mobileMenuOpen: menuOpen}" class="links">
       <ul>
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/about">About</router-link></li>
-        <li><router-link to="/projects">Projects</router-link></li> 
         <li><router-link to="/playground">Playground</router-link></li>
         <li><router-link to="/contact">Contact</router-link></li>
       </ul>
     </div>  
-    <div>EN</div> 
-    <div class="menu-toggle"> 
-      <button v-on:click="menuToggle" >HB</button>
-    </div>
+    <div class="language-toggle">EN</div> 
   </div>
 </template>
 
 <script>
   export default {
-    name: 'menu',
+    name: 'navigation',
     data() {
-      menuOpen: false
+      return {
+        menuOpen: false
+      }
     }, 
     methods: { 
       menuToggle() {
-        this.menuOpen = !this.menuOpen
+        this.menuOpen = !this.menuOpen  
+        console.log(this.menuOpen)
       }
     }
   }
@@ -35,13 +37,6 @@
 
 <style lang="scss" scoped>
 @import '../assets/styles/mediaqueries';
-
-.menu-toggle {
-  display: none; 
-  font-weight: bold; 
-  color: #fff;  
-  font-size: 1.5rem;
-}
 
 .nav {
   display: flex;   
@@ -83,31 +78,79 @@ a {
   &:hover { 
     opacity: 1;
   }
-}  
+}   
 
-@include for-phone-only {
-  .nav { 
-    display: grid; 
-    overflow: hidden; 
-    grid-template-columns: 1fr 1fr;
-  }    
+.menu-toggle {
+  display: none;
+} 
+
+@mixin mobile-menu {
+  .language-toggle { 
+    display: none;
+  }  
   
-  .links { 
-    grid-row: 2;
-  } 
+  .nav { 
+    display: flex; 
+    flex-wrap: wrap; 
+    div { 
+      flex: 50%;
+    }
+  }  
 
-  .menu-open { 
-    background: green;
+  $mobileNavHeight: 2rem;
+
+  .logo { 
+    height: $mobileNavHeight;
   }
-
-  .menu-toggle { 
-    display: inline-block; 
-    // justify-self: end;
+  
+  .menu-toggle {  
+    height: $mobileNavHeight; 
+    display: block;  
+    button {  
+      height: 2rem;  
+      float: right; 
+      background: none; 
+      border: none; 
+      opacity: .8; 
+      transition: opacity .1s; 
+      &:hover {
+        opacity: 1;
+      }
+      img {
+        vertical-align: middle;
+      }
+    }
   } 
 
-  li { 
+  .links {
+    display: none;  
+    padding: 0.2em;  
+    height: calc(100vh - 3.6rem);
+    li { 
+      display: block; 
+      border-top: 1px solid #fff; 
+      padding-top: 1.3em; 
+      padding-bottom: 1.3em;  
+      &:first-of-type { 
+        border-top: 0;
+      }
+    }
+  }  
+
+  .mobileMenuOpen { 
     display: block;
   }
+  a { 
+    padding: 0;
+  } 
+}
 
+
+@include mobile-landscape {
+  @include mobile-menu();
+} 
+
+@include mobile-portait {
+  @include mobile-menu();
 }
 </style>
