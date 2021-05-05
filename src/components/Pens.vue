@@ -1,5 +1,5 @@
 <template>
-  <div class="pens-grid"> 
+  <div class="pens-grid">   
     <div v-for="pen in pens.items" :key="pen.url">
       <a :href="pen.link" target="_blank">
         <div class="pen">
@@ -30,10 +30,10 @@
       }
     },
     mounted() {
-      fetch(popularFeed)
+      fetch(publicFeed)
       .then(res => res.json()) 
       .then(data => this.pens = data) 
-      .catch(err => console.log(err.message))
+      .catch(err => console.log(err.message)) 
     }
   }
 </script>
