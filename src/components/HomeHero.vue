@@ -3,6 +3,12 @@
     <div class="title">
       <h1 class="gradient-title">你好， 我是 Caleb</h1> 
       <h3 class="gradient-title">我是个新西兰的初级开发人员</h3>
+    </div> 
+    <div class="see-more">
+      <a href="#">
+        <span>See more</span> 
+        <span class="caret">&caron;</span>
+      </a>
     </div>
   </div>
 </template>
@@ -12,16 +18,51 @@
 .hero {  
   background: rgb(51,51,51);
   background: radial-gradient(circle, rgba(51,51,51,1) 0%, rgba(0,0,0,1) 100%);
-  min-height: 90vh;  
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
+  height: calc(90vh + 1.5rem);  
+  font-size: 2em;   
+  display: grid; 
+  grid-template-rows: 1fr 1fr 1fr;
+}   
+
+.title { 
+  z-index: 1;  
+  margin: 0 auto; 
   text-align: center; 
-  font-size: 2em; 
+  grid-row: 2; 
+  align-self: center;
 }  
 
+.see-more { 
+  grid-row: 3; 
+  color: #fff; 
+  text-align: center; 
+  font-weight: lighter; 
+  font-size: .7em; 
+  display: flex;  
+  flex-direction: column;
+  align-self: flex-end;  
+  a { 
+    text-decoration: none; 
+    color: inherit;   
+    transition: margin 0.2s;   
+    padding: 20px;
+    span { 
+      display: block;  
+    }
+
+    &:hover { 
+      margin-bottom: -5px;  
+    }
+  }
+} 
+
+.caret {
+  font-size: 1.5em; 
+  // padding-top:s 100px;
+}
+
 h1, h2, h3{
-  margin: 0.10em;
+  margin: 0;
 }
 
 .gradient-title {
@@ -31,8 +72,4 @@ h1, h2, h3{
   -webkit-text-fill-color: transparent;  
   font-weight: lighter;
 }
-
-.title { 
-  z-index: 1;  
-} 
 </style>

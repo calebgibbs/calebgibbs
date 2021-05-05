@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Hero/> 
+    <Hero/>   
+    <div>
+      
+    </div>
   </div>
 </template>
 
