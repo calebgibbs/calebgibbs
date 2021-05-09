@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="page">
+    <h1>Recent CodePens</h1>
     <Pens/>
   </div>
 </template>
@@ -8,14 +9,6 @@
   import Pens from '../components/Pens'
 
   export default {
-    data() { 
-      pens: [
-        {url: 'https://codepen.io/calebgibbs/details/zjxQyP'}, 
-        {url: 'https://codepen.io/calebgibbs/pen/wjQxdQ'}, 
-        {url: 'https://codepen.io/calebgibbs/pen/XqoLEJ'}, 
-        {url: 'https://codepen.io/calebgibbs/details/bMzvea'}
-      ]
-    }, 
     components: {
       Pens
     }
@@ -23,5 +16,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+h1 { 
+  padding-top: 1em; 
+  padding-bottom: 1em; 
+  font-weight: lighter;
+}
 </style>

@@ -8,4 +8,15 @@ body {
   font-family: 'Open Sans', sans-serif; 
   background-color: $background; 
 
+}  
+
+//page styles 
+
+.page { 
+  width: 90%; 
+  margin: 0 auto;
 } 
+
+h1, h2, h3 {
+  margin: 0;
+}

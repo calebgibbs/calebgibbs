@@ -47,11 +47,8 @@ $cardTransition: 0.2s;
 
 .pens-grid {
   display: grid; 
-  grid-gap: 2em;
-  width: 90%; 
-  margin: 0 auto;  
-  margin-top: 4em;
-
+  grid-gap: 2em; 
+  
   @include desktop-large {
     grid-template-columns: repeat(3, 1fr);
   } 
