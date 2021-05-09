@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue' 
-import Playground from '../views/Playground'
+import Playground from '../views/Playground' 
+import Contact from '../views/Contact'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/playground', 
     name: 'Playground', 
     component: Playground
+  }, 
+  { 
+    path: '/contact', 
+    name: 'Contact', 
+    component: Contact
   }
 ]
 
