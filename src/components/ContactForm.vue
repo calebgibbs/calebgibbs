@@ -2,19 +2,19 @@
   <div>
     <form>
       <div>
-        <input name="name" type="text" required> 
+        <input name="name" type="text" v-model="name" required> 
         <label for="name">Name</label>
       </div>
       <div>
-        <input name="email" type="text" required> 
+        <input name="email" type="text" v-model="email" required> 
         <label for="email">Email</label> 
       </div> 
       <div>
-        <textarea name="message" cols="30" rows="8" required></textarea> 
+        <textarea name="message" cols="30" rows="8" v-model="message" required></textarea> 
         <label for="message" class="message-label">Message</label>
       </div> 
       <div>
-        <button>Send</button>
+        <button @click="submitForm">Send</button>
       </div>
     </form>
   </div>
@@ -22,7 +22,21 @@
 
 <script>
   export default {
-    
+    data() {
+      return {
+        form: {
+          name: '', 
+          email: '', 
+          message: ''
+        }
+      }
+    }, 
+    methods: {
+      submitForm(e) {
+        e.preventDefault()
+        alert('submit')
+      }
+    }
   }
 </script>
 

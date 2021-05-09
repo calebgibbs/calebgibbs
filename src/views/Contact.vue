@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h1>Let's start talking</h1>
+    <h1>Let's start talking.</h1>
     <ContactForm/>
   </div>
 </template>
@@ -15,5 +15,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+h1 { 
+  text-align: center; 
+  font-weight: lighter; 
+  margin-top: 4em;
+}
 </style>
