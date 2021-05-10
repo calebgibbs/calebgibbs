@@ -62,7 +62,9 @@
         } 
         console.table(this.errors)
         //submit form   
-        e.preventDefault()
+        if(!this.errors) {
+          console.log('no errors');
+        }
       }
     }
   }
