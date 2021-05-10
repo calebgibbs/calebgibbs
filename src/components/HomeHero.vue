@@ -1,11 +1,11 @@
 <template>
   <div class="hero">
     <div class="title">
-      <h1 class="gradient-title">你好， 我是 Caleb</h1> 
-      <h3 class="gradient-title">我是个新西兰的初级开发人员</h3>
+      <h1 class="gradient-title">Hi! I'm Caleb.</h1> 
+      <h3 class="gradient-title">I'm a Wellington-based web developer.</h3>
     </div> 
     <div class="see-more">
-      <a href="#">
+      <a href="#see-more">
         <span>See more</span> 
         <span class="caret">&caron;</span>
       </a>

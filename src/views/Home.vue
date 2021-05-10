@@ -1,8 +1,8 @@
 <template>
   <div>
     <Hero/>   
-    <div>
-      
+    <div id="see-more">
+      Extra content :)
     </div>
   </div>
 </template>

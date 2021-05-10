@@ -15,40 +15,92 @@
       </div> 
       <div>
         <button @click="submitForm">Send</button>
-      </div>
+      </div>  
     </form>
   </div>
 </template>
 
-<script>
+<script> 
+  const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/ 
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
   export default {
-    data() {
+    data() { 
       return {
-        form: {
-          name: '', 
-          email: '', 
-          message: ''
-        }
+        errors: {
+          name: true,
+          email: true, 
+          message: true
+        }, 
+        name: null, 
+        email: null, 
+        message: null, 
+        eMessage: null 
       }
     }, 
     methods: {
       submitForm(e) {
-        e.preventDefault()
-        alert('submit')
+        e.preventDefault() 
+        
+        //validate name  
+        if(!this.name) {
+          this.errors.name = true  
+        } else if(!this.name.match(nameRegex)) {
+          this.errors.name = true
+        } else { 
+          this.errors.name = false
+        }
+        
+        //Validate email  
+        if(!this.email) {
+          this.errors.email = true
+        } else if(!this.email.match(emailRegex)) {
+          this.errors.email = true
+        } else {
+          this.errors.email = false
+        } 
+
+        //validate message 
+        if(!this.message) { 
+          this.errors.message = true
+        } else { 
+          this.errors.message = false
+        } 
+
+        //submit form  
+        if( !this.errors.name && !this.errors.email && !this.errors.message ) {
+          console.log('sending form')
+        }
       }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/styles/mediaqueries';
+
 form { 
   width: 50%; 
   margin: 0 auto; 
   margin-top: 4em;  
+  @include tablet-landscape { 
+    width: 50%;
+  } 
+
+  @include tablet-portait { 
+    width: 80%;
+  } 
+
+  @include mobile-landscape { 
+    width: 80%;
+  } 
+
+  @include mobile-portait { 
+    width: 90%;
+  } 
   div { 
     position: relative; 
     padding-bottom: 1em;
-  }
+  } 
 }   
 
 input { 
