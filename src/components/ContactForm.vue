@@ -3,11 +3,11 @@
     <form>
       <div>
         <input name="name" type="text" v-model="name" required> 
-        <label for="name">Name</label>
+        <label for="name">Name</label> 
       </div>
       <div>
         <input name="email" type="text" v-model="email" required> 
-        <label for="email">Email</label> 
+        <label for="email">Email</label>
       </div> 
       <div>
         <textarea name="message" cols="30" rows="8" v-model="message" required></textarea> 
@@ -16,6 +16,11 @@
       <div>
         <button @click="submitForm">Send</button>
       </div>  
+      <div>
+        <ul class="errors">
+          <li v-for="error in errors" :key="error">{{ error }}</li>
+        </ul>
+      </div> 
     </form>
   </div>
 </template>
@@ -26,50 +31,38 @@
   export default {
     data() { 
       return {
-        errors: {
-          name: true,
-          email: true, 
-          message: true
-        }, 
-        name: null, 
-        email: null, 
-        message: null, 
-        eMessage: null 
+        errors: [], 
+        name: null,  
+        email: null,  
+        message: null
       }
     }, 
     methods: {
-      submitForm(e) {
-        e.preventDefault() 
-        
+      submitForm(e) {      
+        //clear error messages 
+        this.errors = []
+
         //validate name  
-        if(!this.name) {
-          this.errors.name = true  
+        if(!this.name) {   
+          this.errors.push('Please enter your name')
         } else if(!this.name.match(nameRegex)) {
-          this.errors.name = true
-        } else { 
-          this.errors.name = false
+          this.errors.push('Please enter a valid name')
         }
         
         //Validate email  
-        if(!this.email) {
-          this.errors.email = true
+        if(!this.email) {   
+          this.errors.push('Please enter your email')
         } else if(!this.email.match(emailRegex)) {
-          this.errors.email = true
-        } else {
-          this.errors.email = false
+          this.errors.push('Please enter a valid email')
         } 
 
         //validate message 
         if(!this.message) { 
-          this.errors.message = true
-        } else { 
-          this.errors.message = false
+          this.errors.push('Please add a message')
         } 
-
-        //submit form  
-        if( !this.errors.name && !this.errors.email && !this.errors.message ) {
-          console.log('sending form')
-        }
+        console.table(this.errors)
+        //submit form   
+        e.preventDefault()
       }
     }
   }
@@ -77,6 +70,7 @@
 
 <style lang="scss" scoped>
 @import '../assets/styles/mediaqueries';
+@import '../assets/styles/colours';
 
 form { 
   width: 50%; 
@@ -174,6 +168,14 @@ button {
   &:hover {
     border: 2px solid rgba(0,0,0,1);  
     color: #000;
+  }
+} 
+
+.errors { 
+  padding: 0; 
+  li { 
+    list-style-type: none; 
+    color: $red;
   }
 }
 
