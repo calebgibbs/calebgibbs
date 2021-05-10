@@ -1,17 +1,21 @@
 <template>
   <div>
     <Hero/>   
-    <div id="see-more">
-      Extra content :)
+    <div class="page" id="see-more"> 
+      <div class="section-contact">
+        <ContactForm/>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-  import Hero from '../components/HomeHero' 
+  import Hero from '../components/HomeHero'  
+  import ContactForm from '../components/ContactForm' 
   export default {
     components: {
-      Hero
+      Hero, 
+      ContactForm
     }
   }
 </script>
