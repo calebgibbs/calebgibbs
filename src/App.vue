@@ -1,20 +1,25 @@
 <template>
-  <div> 
+  <div class="app"> 
     <TheMenu/> 
-    <router-view/>
+    <router-view/> 
+    <!-- <Footer/> -->
   </div>
 </template>
 
 <script>
-  import TheMenu from './components/TheMenu'
+  import TheMenu from './components/TheMenu' 
+  import Footer from './components/Footer'
   export default {
     name: 'App', 
     components: {
-      TheMenu
+      TheMenu, 
+      Footer
     }
   }
 </script>
 
 <style lang="scss" scoped>
-
+.app { 
+  position: relative;
+}
 </style>

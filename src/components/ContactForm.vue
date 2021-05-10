@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form>
+    <form name="contact" method="POST" data-netlify="true">
       <div>
         <input name="name" type="text" v-model="name" required> 
         <label for="name">Name</label> 
