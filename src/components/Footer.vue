@@ -1,6 +1,9 @@
 <template>
   <div>
-    Footer
+    //links 
+    //git details 
+    // /uses 
+    //copyright 
   </div>
 </template>
 
