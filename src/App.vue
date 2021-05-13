@@ -2,7 +2,7 @@
   <div class="app"> 
     <TheMenu/> 
     <router-view/> 
-    <!-- <Footer/> -->
+    <Footer/>
   </div>
 </template>
 
@@ -17,9 +17,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-.app { 
-  position: relative;
-}
-</style>
