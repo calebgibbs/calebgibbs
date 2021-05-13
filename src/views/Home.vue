@@ -5,6 +5,8 @@
       <div class="section-contact"> 
         <HomeAbout/> 
         <Skills/> 
+        <h3 class="gradient-title">Get in touch</h3>
+        <ContactForm/>
       </div>
     </div>
   </div>
@@ -26,7 +28,9 @@
 </script>
 
 <style lang="scss" scoped>
-h2 { 
-  text-align: center;
+h3 { 
+  text-align: center; 
+  font-size: 2em; 
+  margin-top: 4em;
 }
 </style>
