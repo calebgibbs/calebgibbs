@@ -74,7 +74,13 @@ h1, h2, h3{
   h3 { 
     text-transform: lowercase;
   }
-} 
+}  
+
+@include mobile-portait { 
+  .hero { 
+    font-size: 1.5em;
+  } 
+}
 
 @include ios-styles { 
   .hero { 
