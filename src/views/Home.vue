@@ -4,8 +4,7 @@
     <div id="see-more"> 
       <div class="section-contact"> 
         <HomeAbout/> 
-        <Uses/>
-        <!-- <ContactForm/> -->
+        <Skills/> 
       </div>
     </div>
   </div>
@@ -15,17 +14,19 @@
   import Hero from '../components/HomeHero'  
   import ContactForm from '../components/ContactForm'  
   import HomeAbout from '../components/HomeAbout' 
-  import Uses from '../components/Uses'
+  import Skills from '../components/Skills'
   export default {
     components: {
       Hero, 
       ContactForm, 
       HomeAbout, 
-      Uses
+      Skills
     }
   }
 </script>
 
 <style lang="scss" scoped>
-
+h2 { 
+  text-align: center;
+}
 </style>
