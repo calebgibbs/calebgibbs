@@ -11,12 +11,13 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped> 
+@import '../assets/styles/mediaqueries';
 div { 
   margin: 5em; 
   font-size: 1.3em; 
   text-align: center; 
-} 
+}  
 
 h2 { 
   font-size: 1.7em;
@@ -26,5 +27,38 @@ p {
   width: 50%; 
   margin: 0 auto; 
   margin-top: 1em;
+} 
+
+@include tablet-landscape { 
+  p { 
+    width: 70%;
+  }
+} 
+
+@include tablet-portait { 
+  div{
+    margin: 4em 2em;
+  }
+  
+  p { 
+    width: 75%;
+  }
+} 
+
+@include mobile-landscape { 
+  p { 
+    width: 75%;
+  }
+} 
+
+@include mobile-portait { 
+  div { 
+    margin: 3em 1em;
+  }
+  
+  p { 
+    width: 100%;
+  }
 }
+
 </style>
