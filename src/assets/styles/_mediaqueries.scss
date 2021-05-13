@@ -48,4 +48,12 @@
   @media (min-width: 320px) and (max-width: 480px) { 
     @content; 
   }
+} 
+
+//ios  
+
+@mixin ios-styles {
+  @supports (-webkit-overflow-scrolling: touch) {
+    @content 
+  }
 }
