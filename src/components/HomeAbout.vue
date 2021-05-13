@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div>
     <h2 class="gradient-title">Hi, I'm Caleb</h2> 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque praesentium sapiente explicabo optio officia eligendi molestias totam cum id. Laudantium saepe officia cupiditate eaque maxime ducimus veritatis nostrum soluta? Nam!</p>
   </div>
@@ -13,13 +13,13 @@
 
 <style lang="scss" scoped>
 div { 
-  padding: 3em; 
+  margin: 5em; 
   font-size: 1.3em; 
-  text-align: center;
+  text-align: center; 
 } 
 
 h2 { 
-  font-weight: bolder;
+  font-size: 1.7em;
 } 
 
 p { 

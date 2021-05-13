@@ -3,7 +3,8 @@
     <Hero/>   
     <div id="see-more"> 
       <div class="section-contact"> 
-        <HomeAbout/>
+        <HomeAbout/> 
+        <Uses/>
         <!-- <ContactForm/> -->
       </div>
     </div>
@@ -13,12 +14,14 @@
 <script>
   import Hero from '../components/HomeHero'  
   import ContactForm from '../components/ContactForm'  
-  import HomeAbout from '../components/HomeAbout'
+  import HomeAbout from '../components/HomeAbout' 
+  import Uses from '../components/Uses'
   export default {
     components: {
       Hero, 
       ContactForm, 
-      HomeAbout
+      HomeAbout, 
+      Uses
     }
   }
 </script>

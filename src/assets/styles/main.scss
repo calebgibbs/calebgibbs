@@ -8,14 +8,15 @@ body {
   font-family: 'Open Sans', sans-serif; 
   background-color: $background;  
   scroll-behavior: smooth;
-
+  // overflow-x: hidden;
 }  
 
 //page styles 
 
 .page { 
   width: 90%; 
-  margin: 0 auto;
+  margin: 0 auto; 
+  position: relative;
 }  
 
 .gradient-title {
