@@ -31,9 +31,6 @@
     methods: { 
       menuToggle() {
         this.menuOpen = !this.menuOpen  
-      }, 
-      testMenu() { 
-        console.log('clicked')
       }
     }
   }
