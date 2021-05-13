@@ -32,17 +32,21 @@
             img: 'js.png'
           },
           {
-            title: 'Bootstrap', 
-            img: 'bootstrap.png'
+            title: 'Sass', 
+            img: 'sass.png'
           },
           {
-            title: 'Responsive design', 
+            title: 'Responsive', 
             img: 'responsive.png'
           },
           {
             title: 'Vue.js', 
             img: 'vue.png'
-          }, 
+          },  
+          {
+            title: 'Node.js', 
+            img: 'node.png'
+          },
           { 
             title: 'WordPress', 
             img: 'wordpress.png'
@@ -52,13 +56,21 @@
             img: 'php.png'
           }, 
           {
+            title: 'Laravel', 
+            img: 'laravel.png'
+          }, 
+          {
             title: 'MySQL', 
             img: 'mysql.png'
           },
           { 
             title: 'MongoDB', 
             img: 'mongo.png'
-          }, 
+          },  
+          {
+            title: 'Git', 
+            img: 'git.png'
+          },
           {
             title: 'Adobe Photoshop', 
             img: 'photoshop.png'
@@ -85,7 +97,7 @@
   margin: 0 auto;  
   transform: translateY(50%); 
   font-size: 1.5em; 
-  box-shadow: 0 0 6px 1px rgba(0,0,0,0.2); 
+  // box-shadow: 0 0 6px 1px rgba(0,0,0,0.2); 
   border-radius: 3px;
 }
 
@@ -97,15 +109,15 @@
   overflow: hidden;
 }  
 
-$hoverSpeed: .2s;
+$hoverSpeed: .25s;
 
 ul { 
   padding: 0;  
   margin: 0;  
   display: flex; 
-  justify-content: space-between; 
+  justify-content: space-evenly; 
   flex-wrap: wrap; 
-  width: 75%; 
+  width: 90%; 
   margin: 0 auto; 
   margin-top: 4.5em;
   li { 
