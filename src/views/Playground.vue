@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h1>Recent CodePens</h1>
+    <h1 class="gradient-title">Recent CodePens</h1>
     <Pens/>
   </div>
 </template>
