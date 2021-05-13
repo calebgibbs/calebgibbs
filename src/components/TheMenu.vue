@@ -10,9 +10,9 @@
       <ul>
         <li><router-link to="/" @click.native="menuToggle">Home</router-link></li>
         <li><router-link to="/about" @click.native="menuToggle">About</router-link></li>
-        <!-- <li><router-link to="/projects" @click.native="menuToggle">Projects</router-link></li>  -->
+        <li><router-link to="/projects" @click.native="menuToggle">Projects</router-link></li> 
         <li><router-link to="/playground" @click.native="menuToggle">Playground</router-link></li>
-        <!-- <li><router-link to="/blog" @click.native="menuToggle">Blog</router-link></li> -->
+        <li><router-link to="/blog" @click.native="menuToggle">Blog</router-link></li>
         <li><router-link to="/contact" @click.native="menuToggle">Contact</router-link></li>
       </ul>
     </div>  
