@@ -2,9 +2,9 @@
   <div>
     <Hero/>   
     <div class="page" id="see-more"> 
-      <div class="section-contact">
+      <!-- <div class="section-contact">
         <ContactForm/>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

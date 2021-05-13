@@ -1,8 +1,8 @@
 <template>
   <div class="hero">
     <div class="title">
-      <h1 class="gradient-title">Hi! I'm Caleb.</h1> 
-      <h3 class="gradient-title">I'm a Wellington-based web developer.</h3>
+      <h1 class="gradient-title">Caleb Gibbs</h1> 
+      <h3 class="gradient-title lowercase">Junior web developer</h3>
     </div> 
     <div class="see-more">
       <a href="#see-more">
@@ -14,15 +14,15 @@
 </template>
 
 <style lang="scss" scoped>
-
+@import '../assets/styles/mediaqueries';
 .hero {  
   background: rgb(51,51,51);
   background: radial-gradient(circle, rgba(51,51,51,1) 0%, rgba(0,0,0,1) 100%);
   height: calc(90vh + 1.5rem);  
   font-size: 2em;   
   display: grid; 
-  grid-template-rows: 1fr 1fr 1fr;
-}   
+  grid-template-rows: 1fr 1fr 1fr; 
+}    
 
 .title { 
   z-index: 1;  
@@ -58,7 +58,7 @@
 
 .caret {
   font-size: 1.5em; 
-  // padding-top:s 100px;
+  padding-top:s 100px;
 }
 
 h1, h2, h3{
@@ -70,6 +70,20 @@ h1, h2, h3{
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;  
-  font-weight: lighter;
+  font-weight: lighter; 
+  h3 { 
+    text-transform: lowercase;
+  }
+} 
+
+@include ios-styles { 
+  .hero { 
+    height: 100%; 
+    font-size: 1.5em;
+  }   
+
+  a { 
+    display: none;
+  }
 }
 </style>
