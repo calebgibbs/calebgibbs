@@ -117,6 +117,12 @@ a {
   } 
 }  
 
+@include touch { 
+  .external-link{ 
+    opacity: 1 !important;
+  }
+}
+
 .date-text {
   font-size: .7em;
 }

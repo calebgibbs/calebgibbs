@@ -39,7 +39,7 @@
 //mobile  
 
 @mixin mobile-landscape {
-  @media (min-width: 481px) and (max-width: 767px) { 
+  @media (min-width: 481px) and (max-width: 850px) { 
     @content; 
   }
 } 
@@ -49,11 +49,18 @@
     @content; 
   }
 } 
+ 
 
-//ios  
+//ios   
 
 @mixin ios-styles {
   @supports (-webkit-overflow-scrolling: touch) {
-    @content 
+    @content; 
+  }
+}  
+
+@mixin touch { 
+  @media (hover: none) {
+    @content;
   }
 }

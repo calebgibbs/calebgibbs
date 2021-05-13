@@ -68,10 +68,6 @@
             img: 'mongo.png'
           },  
           {
-            title: 'Git', 
-            img: 'git.png'
-          },
-          {
             title: 'Adobe Photoshop', 
             img: 'photoshop.png'
           }, 
@@ -82,6 +78,10 @@
           {
             title: 'Adobe Indesign', 
             img: 'indesign.png'
+          }, 
+          {
+            title: 'Git', 
+            img: 'git.png'
           }
         ]
       }
@@ -90,6 +90,7 @@
 </script>
 
 <style lang="scss" scoped>
+@import '../assets/styles/mediaqueries';
 .title { 
   background: #fff; 
   width: max-content; 
@@ -137,7 +138,7 @@ ul {
 
 img { 
   height: 3.5em; 
-  margin: .4em 2.5em; 
+  padding: .4em 2.5em; 
   transition: $hoverSpeed transform ease-in-out; 
   display: block; 
   margin-bottom: .8em;
@@ -149,5 +150,33 @@ span {
   opacity: 1; 
   transform: scale(0); 
   transition: $hoverSpeed transform ease-in-out;
+} 
+
+@include touch { 
+  span { 
+    transform: scale(1);
+  }
+}  
+
+@include mobile-landscape { 
+
+} 
+
+@include mobile-portait { 
+  ul { 
+    display: grid;  
+    grid-template-columns: repeat(3, 1fr);  
+    grid-gap: .5em;
+  } 
+  
+  img { 
+    height: 1.7rem; 
+    margin: 0 auto;
+  }  
+
+  span { 
+    font-size: .8em;
+  }
 }
+
 </style>
