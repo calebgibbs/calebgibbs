@@ -16,7 +16,7 @@
         <li><router-link to="/contact">Contact</router-link></li>
       </ul>
     </div>  
-    <div class="language-toggle">EN</div> 
+    <div class="language-toggle"></div> 
   </div>
 </template>
 
