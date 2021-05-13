@@ -6,14 +6,14 @@
     <div class="menu-toggle"> 
       <button @click="menuToggle"><img src="../assets/images/icons/menu.svg" alt="menu"></button>
     </div>
-    <div  :class="{mobileMenuOpen: menuOpen}" class="links">
+    <div id="menu-links" :class="{mobileMenuOpen: menuOpen}" class="links">
       <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/about">About</router-link></li>
-        <li><router-link to="/projects">Projects</router-link></li> 
-        <li><router-link to="/playground">Playground</router-link></li>
-        <li><router-link to="/blog">Blog</router-link></li>
-        <li><router-link to="/contact">Contact</router-link></li>
+        <li><router-link to="/" @click.native="menuToggle">Home</router-link></li>
+        <li><router-link to="/about" @click.native="menuToggle">About</router-link></li>
+        <li><router-link to="/projects" @click.native="menuToggle">Projects</router-link></li> 
+        <li><router-link to="/playground" @click.native="menuToggle">Playground</router-link></li>
+        <li><router-link to="/blog" @click.native="menuToggle">Blog</router-link></li>
+        <li><router-link to="/contact" @click.native="menuToggle">Contact</router-link></li>
       </ul>
     </div>  
     <div class="language-toggle"></div> 
@@ -31,7 +31,9 @@
     methods: { 
       menuToggle() {
         this.menuOpen = !this.menuOpen  
-        console.log(this.menuOpen)
+      }, 
+      testMenu() { 
+        console.log('clicked')
       }
     }
   }
