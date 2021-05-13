@@ -21,7 +21,8 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped> 
+@import '../assets/styles/mediaqueries';
 .footer { 
   width: minmax(100%);
   background: #111;  
@@ -71,5 +72,15 @@ span {
 
 img { 
   width: -50%;
+} 
+
+@include mobile-portait { 
+  .footer-inner { 
+    width: 100%;
+  }
+  
+  li { 
+    padding: 0 1em;
+  }
 }
 </style>
