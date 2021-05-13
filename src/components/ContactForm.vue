@@ -169,7 +169,8 @@ button {
   right: 0;
   &:hover {
     border: 2px solid rgba(0,0,0,1);  
-    color: #000;
+    color: #000; 
+    cursor: pointer;
   }
 } 
 

@@ -63,18 +63,7 @@
 
 h1, h2, h3{
   margin: 0;
-}
-
-.gradient-title {
-  background: linear-gradient(94.23deg,#5374fa 12.41%,#fd9179 52.55%,#ff6969 89.95%);  
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;  
-  font-weight: lighter; 
-  h3 { 
-    text-transform: lowercase;
-  }
-}  
+} 
 
 @include mobile-portait { 
   .hero { 
