@@ -19,6 +19,7 @@
 h1 { 
   padding-top: 1em; 
   padding-bottom: 1em; 
-  font-weight: lighter;
+  font-weight: lighter; 
+  text-align: center;
 }
 </style>

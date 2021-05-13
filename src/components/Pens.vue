@@ -1,18 +1,13 @@
 <template>
   <div class="pens-grid">   
     <div v-for="pen in pens.items" :key="pen.url">
-      <a :href="pen.link" target="_blank">
-        <div class="pen">
-          <div class="pen-img-container">
-            <img :src="pen.thumbnail" alt="thumbnail" style="width: 100%" class="pen-img"> 
-          </div>
-          <div class="pen-text-outer">
-            <div class="pen-title">
-              <span class="title">{{pen.title}}</span>  
-            </div> 
-            <div class="pen-date">
-              <span class="date-text"><small>{{ pen.pubDate | limit-10 }}</small></span>
-              <img class="external-link" src="../assets/images/icons/external-link.svg" alt="external link">
+      <a target="_blank" :href="pen.link">
+        <div class="pen" :style="{ 'background-image': 'url(' + pen.thumbnail + ')' }" >
+          <div class="pen-content">
+            <h3>{{ pen.title }}</h3> 
+            <div class="pen-conetnet-hiden">
+              <span>{{ pen.pubDate | limit-10 }}</span> 
+              <img src="../assets/images/icons/external-link.svg" alt="">
             </div>
           </div>
         </div>
@@ -32,7 +27,7 @@
       }
     },
     mounted() {
-      fetch(publicFeed)
+      fetch(popularFeed)
       .then(res => res.json()) 
       .then(data => this.pens = data) 
       .catch(err => console.log(err.message)) 
@@ -43,87 +38,86 @@
 <style lang="scss" scoped> 
 @import '../assets/styles/mediaqueries'; 
 
-$cardTransition: 0.2s;
+$speed: .2s;
 
-.pens-grid {
-  display: grid; 
-  grid-gap: 2em; 
-  
-  @include desktop-large {
-    grid-template-columns: repeat(3, 1fr);
-  } 
-  @include desktop-small {
-    grid-template-columns: repeat(3, 1fr);
-  } 
-  @include tablet-landscape {
-    grid-template-columns: repeat(3, 1fr);
-  } 
-  @include tablet-portait {
-    grid-template-columns: repeat(2, 1fr);
-  } 
-  @include mobile-landscape {
-    grid-template-columns: repeat(2, 1fr);
-  } 
-  @include mobile-portait {
-    grid-template-columns: repeat(1, 1fr);
-  } 
-}    
+.pens-grid { 
+  display: grid;  
+  grid-gap: 2em;
+  grid-template-columns: repeat(3, 1fr);
+} 
 
-.pen-img-container {
+.pen { 
+  background-size: cover; 
+  padding: 14rem 0 0;
+  background-position: center; 
+  border-radius: 15px; 
+  box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.1); 
   overflow: hidden; 
-  img {
-    transition: transform $cardTransition;
-  }
+  transition: transform $speed ease-in-out;
+  &-content { 
+    padding: 1em; 
+    color: #fff; 
+    background: linear-gradient(
+      rgba(0,0,0, 0),
+      rgba(0,0,0, .2) 25%,
+      rgba(0,0,0, 1)
+    ); 
+    transform: translateY(2.1em); 
+    transition: transform $speed ease-in-out;  
+    transition-delay: .1s;
+  } 
+
+  &:hover, .pen:focus-within { 
+    transform: scale(1.01); 
+
+    h3::after {
+      transform: scaleX(1);
+    } 
+
+    .pen-content { 
+      transform: translateY(0);
+    }
+
+  } 
+
+}  
+
+.pen-conetnet-hiden { 
+  display: flex; 
+  align-content: center; 
+  justify-content: space-between; 
+  margin-top: .5em;
 }
 
 a { 
   text-decoration: none; 
-}
-
-.pen { 
-  color: #000; 
-  background: #f9f9f9;  
-  transition: transform 0.3s, box-shadow 0.4s;  
-  font-size: 1em; 
-  overflow: hidden;  
-  border-radius: 20px; 
-  box-shadow: 0px 2px 30px 0px rgba(0,0,0,0.1);
-
-  &-text-outer {
-    padding: 1em;
-  }
-
-  &-date { 
-    transition: opacity $cardTransition; 
-    display: flex; 
-    justify-content: space-between;  
-    align-items: center; 
-    color: #606060; 
-
-    img { 
-      width: 1.3em;  
-      opacity: 0; 
-      transition: opacity 0.3s;
-    }
-  }
-
-  &:hover {
-    transform: scale(1.03);  
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-  }  
-
-  &:hover .external-link{
-    opacity: 1; 
-  } 
+  color: inherit;
 }  
 
-@include touch { 
-  .external-link{ 
-    opacity: 1 !important;
+h3 { 
+  width: max-content; 
+  position: relative; 
+
+  &::after { 
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    bottom: -.1em;
+    height: 2px; 
+    width: 100%; 
+    background: linear-gradient(94.23deg,#5374fa 12.41%,#fd9179 52.55%,#ff6969 89.95%);  
+    transform: scaleX(0);  
+    transform-origin: left;
+    transition: transform $speed ease;
   }
 }
 
-.date-text {
-  font-size: .7em;
+span { 
+  font-size: .8em;
+}  
+
+img { 
+  height: 1.2em;
 }
+
 </style>

@@ -141,7 +141,13 @@ img {
   padding: .4em 2.5em; 
   transition: $hoverSpeed transform ease-in-out; 
   display: block; 
-  margin-bottom: .8em;
+  margin-bottom: .8em; 
+  user-drag: none;
+  -moz-user-select: none;
+   -webkit-user-drag: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;  
+  user-select: none;
 } 
 
 span { 
@@ -150,6 +156,7 @@ span {
   opacity: 1; 
   transform: scale(0); 
   transition: $hoverSpeed transform ease-in-out;
+  user-select: none;
 } 
 
 @include touch { 
