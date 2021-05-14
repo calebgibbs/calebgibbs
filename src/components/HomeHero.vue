@@ -2,7 +2,7 @@
   <div class="hero">
     <div class="title">
       <h1 class="gradient-title">Caleb Gibbs</h1> 
-      <h3 class="gradient-title lowercase">Junior web developer</h3>
+      <h3 class="gradient-title lowercase">junior web developer</h3>
     </div> 
     <div class="see-more">
       <a href="#see-more">

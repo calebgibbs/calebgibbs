@@ -43,8 +43,26 @@ $speed: .2s;
 .pens-grid { 
   display: grid;  
   grid-gap: 2em;
-  grid-template-columns: repeat(3, 1fr);
-} 
+  grid-template-columns: repeat(3, 1fr);  
+  @include desktop-large {
+    grid-template-columns: repeat(3, 1fr);
+  } 
+  @include desktop-small {
+    grid-template-columns: repeat(3, 1fr);
+  } 
+  @include tablet-landscape {
+    grid-template-columns: repeat(3, 1fr);
+  } 
+  @include tablet-portait {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+  @include mobile-landscape {
+    grid-template-columns: repeat(1, 1fr);
+  } 
+  @include mobile-portait {
+    grid-template-columns: repeat(1, 1fr);
+  } 
+}
 
 .pen { 
   background-size: cover; 
@@ -67,7 +85,7 @@ $speed: .2s;
     transition-delay: .1s;
   } 
 
-  &:hover, .pen:focus-within { 
+  &:hover { 
     transform: scale(1.01); 
 
     h3::after {
@@ -76,11 +94,21 @@ $speed: .2s;
 
     .pen-content { 
       transform: translateY(0);
+    } 
+
+    img {
+      opacity: 1; 
     }
 
   } 
 
 }  
+
+@include touch { 
+  .pen-content { 
+    transform: translateY(1);
+  }
+}
 
 .pen-conetnet-hiden { 
   display: flex; 
@@ -117,7 +145,7 @@ span {
 }  
 
 img { 
-  height: 1.2em;
+  height: 1.2em; 
 }
 
 </style>
