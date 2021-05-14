@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="gradient-title">您好，我是 Gibbs</h2> 
+    <h2 class="gradient-title">Hi, I'm Caleb</h2> 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque praesentium sapiente explicabo optio officia eligendi molestias totam cum id. Laudantium saepe officia cupiditate eaque maxime ducimus veritatis nostrum soluta? Nam!</p>
   </div>
 </template>

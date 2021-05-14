@@ -106,8 +106,8 @@ $speed: .2s;
 
 @include touch { 
   .pen-content { 
-    transform: translateY(1);
-  }
+    transform: translateY(0);
+  } 
 }
 
 .pen-conetnet-hiden { 
@@ -133,7 +133,8 @@ h3 {
     bottom: -.1em;
     height: 2px; 
     width: 100%; 
-    background: linear-gradient(94.23deg,#5374fa 12.41%,#fd9179 52.55%,#ff6969 89.95%);  
+    // background: linear-gradient(94.23deg,#5374fa 12.41%,#fd9179 52.55%,#ff6969 89.95%);  
+    background: #fff; 
     transform: scaleX(0);  
     transform-origin: left;
     transition: transform $speed ease;
