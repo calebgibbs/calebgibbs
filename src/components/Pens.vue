@@ -27,7 +27,7 @@
       }
     },
     mounted() {
-      fetch(publicFeed)
+      fetch(popularFeed)
       .then(res => res.json()) 
       .then(data => this.pens = data) 
       .catch(err => console.log(err.message)) 
