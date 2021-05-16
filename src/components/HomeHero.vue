@@ -47,7 +47,9 @@
   font-size: .7em; 
   display: flex;  
   flex-direction: column;
-  align-self: flex-end;  
+  align-self: flex-end;   
+  width: max-content; 
+  margin: 0 auto;
   a { 
     text-decoration: none; 
     color: inherit;   
@@ -58,7 +60,7 @@
     }
 
     &:hover { 
-      margin-bottom: -5px;  
+      margin-bottom: -5px; 
     }
   }
 } 

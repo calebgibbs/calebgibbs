@@ -142,7 +142,6 @@ img {
   transition: $hoverSpeed transform ease-in-out;   
   display: block; 
   margin-bottom: .8em; 
-  user-drag: none;
   -moz-user-select: none;
    -webkit-user-drag: none;
    -webkit-user-select: none;

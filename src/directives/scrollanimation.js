@@ -3,6 +3,7 @@ const animatedScollObserver = new IntersectionObserver(
     enteries.forEach((entry) => {
       if(entry.isIntersecting) { 
         entry.target.classList.add('enter')
+        // entry.target.classList.remove('before-enter')
         animatedScollObserver.unobserve(entry.target)
       }
     }) 
@@ -11,7 +12,7 @@ const animatedScollObserver = new IntersectionObserver(
 
 export default { 
   bind(el) { 
-    el.classList.add('before-enter') 
+    el.classList.add('before-enter')  
     animatedScollObserver.observe(el)
   }
 }
