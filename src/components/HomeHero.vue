@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <div class="title">
+    <div class="title" v-scrollanimation>
       <h1 class="gradient-title">Caleb Gibbs</h1> 
       <h3 class="gradient-title lowercase">Junior web developer</h3>
     </div> 
@@ -11,7 +11,14 @@
       </a>
     </div>
   </div>
-</template>
+</template> 
+
+<script>
+  export default {
+
+  }
+</script>
+
 
 <style lang="scss" scoped>
 @import '../assets/styles/mediaqueries';

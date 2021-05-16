@@ -5,8 +5,8 @@
     </div>
     <div class="icons">
       <ul>
-        <li v-for="skil in skills" :key="skil">
-          <img :src="require('../assets/images/skills/'+skil.img)" > 
+        <li v-for="skil in skills" :key="skil" v-scrollanimation>
+          <img :src="require('../assets/images/skills/'+skil.img)"> 
           <span class="skil-name">{{ skil.title }}</span>
         </li>
       </ul> 
@@ -139,7 +139,7 @@ ul {
 img { 
   height: 3.5em; 
   padding: .4em 2.5em; 
-  transition: $hoverSpeed transform ease-in-out; 
+  transition: $hoverSpeed transform ease-in-out;   
   display: block; 
   margin-bottom: .8em; 
   user-drag: none;
@@ -147,7 +147,7 @@ img {
    -webkit-user-drag: none;
    -webkit-user-select: none;
    -ms-user-select: none;  
-  user-select: none;
+  user-select: none; 
 } 
 
 span { 
@@ -155,14 +155,29 @@ span {
   text-align: center; 
   opacity: 1; 
   transform: scale(0); 
-  transition: $hoverSpeed transform ease-in-out;
+  transition: $hoverSpeed transform ease-in-out; 
   user-select: none;
+}  
+
+li { 
+  overflow: hidden;
+}
+
+.before-enter > img{ 
+  opacity: 0; 
+  transform: translateY(7em);
+} 
+
+.enter > img{ 
+  opacity: 1; 
+  transform: translateY(0);
 } 
 
 @include touch { 
   span { 
-    transform: scale(1);
-  }
+    transform: scale(1); 
+    transition: 5s opacity ease-in;
+  }   
 }  
 
 @include mobile-landscape { 

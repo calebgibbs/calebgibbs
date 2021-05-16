@@ -4,7 +4,7 @@ import router from './router'
 import store from './store' 
 
 import './assets/styles/main.scss'
-import Vuelidate from 'vuelidate'
+import ScollAnimation from './directives/scrollanimation'
 
 
 Vue.config.productionTip = false
@@ -12,10 +12,10 @@ Vue.config.productionTip = false
 //filters 
 Vue.filter('limit-10', function(value){
   return value.slice(0,10)
-}) 
+})  
 
-Vue.use(Vuelidate)
-
+//animation  
+Vue.directive('scrollanimation', ScollAnimation)
 
 new Vue({
   router,
