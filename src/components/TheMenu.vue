@@ -66,9 +66,10 @@ li {
 }
 
 .logo {
-  font-weight: bold; 
+  // font-weight: bold; 
   color: #fff;  
-  font-size: 1.5rem;
+  font-size: 1.5rem; 
+  opacity: 1;
 }  
 
 $link-padding: 1.4em;

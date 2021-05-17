@@ -1,20 +1,20 @@
 <template>
-  <div>
-    <form name="contact" method="POST" data-netlify="true">
+  <div id="theform">
+    <form name="contact" @submit.prevent="submitForm">
       <div>
-        <input name="name" type="text" v-model="name" required> 
+        <input name="name" type="text" id="name" v-model="name" required> 
         <label for="name">Name</label> 
       </div>
       <div>
-        <input name="email" type="text" v-model="email" required> 
+        <input name="email" type="text" id="email" v-model="email" required> 
         <label for="email">Email</label>
       </div> 
       <div>
-        <textarea name="message" cols="30" rows="8" v-model="message" required></textarea> 
+        <textarea name="message" cols="30" rows="8" v-model="message" id="message" required></textarea> 
         <label for="message" class="message-label">Message</label>
       </div> 
       <div>
-        <button @click="submitForm">Send</button>
+        <button type="submit">Send</button>
       </div>  
       <div>
         <ul class="errors">
@@ -26,6 +26,7 @@
 </template>
 
 <script> 
+  import emailjs from 'emailjs-com'
   const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/ 
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
   export default {
@@ -39,32 +40,17 @@
     }, 
     methods: {
       submitForm(e) {      
-        //clear error messages 
-        this.errors = []
-
-        //validate name  
-        if(!this.name) {   
-          this.errors.push('Please enter your name')
-        } else if(!this.name.match(nameRegex)) {
-          this.errors.push('Please enter a valid name')
-        }
-        
-        //Validate email  
-        if(!this.email) {   
-          this.errors.push('Please enter your email')
-        } else if(!this.email.match(emailRegex)) {
-          this.errors.push('Please enter a valid email')
-        } 
-
-        //validate message 
-        if(!this.message) { 
-          this.errors.push('Please add a message')
-        } 
-        console.table(this.errors)
-        //submit form   
-        if(!this.errors) {
-          console.log('no errors');
-        }
+        emailjs.sendForm('service_s1w9a4i', 'template_6bfqpxu', e.target, 'user_cXVYnoDAnK7U0qBsC9viA')
+        .then((result) => {
+            console.log('SUCCESS!', result.status, result.text) 
+            //add sending class  
+            document.getElementById('theform').classList.add('sending')
+            document.getElementById('name').value = ''
+            document.getElementById('email').value = ''
+            document.getElementById('message').value = ''
+        }, (error) => {
+            console.log('FAILED...', error)
+        });
       }
     }
   }
@@ -180,6 +166,28 @@ button {
     list-style-type: none; 
     color: $red;
   }
+}  
+
+.sending { 
+  animation: send 2s;
 }
 
+@keyframes send { 
+  0% {
+    transform: scale(0.8);
+  } 
+  50% {
+    transform: translateX(100%); 
+  }  
+  55% { 
+    opacity: 0; 
+    transform: translateX(0);
+  }  
+  70% {
+    opacity: .5; 
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>

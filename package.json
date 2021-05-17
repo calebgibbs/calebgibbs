@@ -13,6 +13,7 @@
     "@vuelidate/validators": "*",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "emailjs-com": "^2.6.4",
     "vue": "^2.6.11",
     "vue-awesome": "^4.1.0",
     "vue-axios": "^3.2.4",

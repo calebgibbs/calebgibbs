@@ -1,8 +1,8 @@
 <template>
   <div class="hero">
-    <div class="title" v-scrollanimation>
+    <div class="title">
       <h1 class="gradient-title">Caleb Gibbs</h1> 
-      <h3 class="gradient-title lowercase">Junior web developer</h3>
+      <h3 class="gradient-title">Web Developer</h3>
     </div> 
     <div class="see-more">
       <a href="#see-more">
@@ -15,7 +15,7 @@
 
 <script>
   export default {
-
+    
   }
 </script>
 
