@@ -7,7 +7,7 @@
             <h3>{{ pen.title }}</h3> 
             <div class="pen-conetnet-hiden">
               <span>{{ pen.pubDate | limit-10 }}</span> 
-              <img src="../assets/images/icons/external-link.svg" alt="">
+              <img src="../assets/images/icons/external-link.svg" alt="external link icon">
             </div>
           </div>
         </div>
