@@ -1,15 +1,14 @@
 <template>
-  <div class="outer">
-    <div class="loading-outer" :style="'width: calc(1em + '+size+'); height: calc(1em + '+size+')'">
-      <div :style="'width: '+size+'; height: '+size+';'"></div>
-    </div>
+  <div class="loading-outer" :style="'width: calc('+border+' + '+size+'); height: calc('+border+' + '+size+')'">
+    <div :style="'width: '+size+'; height: '+size+';'"></div>
   </div>
 </template> 
 
 <script>
   export default {
     props: {
-      size: String
+      size: String,
+      border: String
     }
   }
 </script>
@@ -39,9 +38,4 @@ $size: 1rem;
     transform: rotate(360deg);
   }
 } 
-
-.outer { 
-  width: 1rem; 
-  height: 1rem;
-}
 </style>

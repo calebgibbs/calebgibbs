@@ -1,18 +1,15 @@
 <template>
   <div class="page">
     <h1 class="gradient-title">Let's start talking.</h1>
-    <!-- <ContactForm/> --> 
-    <Loader size="4em"/>
+    <ContactForm/> 
   </div>
 </template>
 
 <script> 
-  import ContactForm from '../components/ContactForm' 
-  import Loader from '../components/Loader'
+  import ContactForm from '../components/ContactForm'  
   export default {
     components: {
-      ContactForm, 
-      Loader
+      ContactForm
     }
   }
 </script>

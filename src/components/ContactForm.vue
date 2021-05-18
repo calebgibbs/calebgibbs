@@ -1,25 +1,23 @@
 <template>
   <div id="theform">
     <form name="contact" @submit.prevent="submitForm">
-      <div>
+      <div class="input-container">
         <input name="name" type="text" id="name" v-model="name" required> 
         <label for="name">Name</label> 
       </div>
-      <div>
+      <div class="input-container">
         <input name="email" type="text" id="email" v-model="email" required> 
         <label for="email">Email</label>
       </div> 
-      <div>
+      <div class="input-container">
         <textarea name="message" cols="30" rows="8" v-model="message" id="message" required></textarea> 
         <label for="message" class="message-label">Message</label>
       </div> 
-      <div>
+      <div class="input-container">
         <button type="submit" id="submit-button" @click="validateFrom">
           <span id="send-text">Send</span> 
           <span id="loading" class="hidden">
-            <div class="loader-border">
-              <div class="loader-inner"></div>
-            </div>
+            <Loader size="1em" border=".5em" />
           </span>
         </button>
       </div>  
@@ -34,6 +32,7 @@
 
 <script> 
   import emailjs from 'emailjs-com'
+  import Loader from './Loader'
   const nameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/ 
   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
   export default {
@@ -96,6 +95,9 @@
             this.errors.push('Something went wrong. Pleas try again later')
         }) 
       }
+    },
+    components: {
+      Loader
     }
   }
 </script>
@@ -123,7 +125,7 @@ form {
   @include mobile-portait { 
     width: 90%;
   } 
-  div { 
+  .input-container { 
     position: relative; 
     padding-bottom: 1em;
   } 
@@ -210,42 +212,6 @@ button {
 
 .hidden { 
   display: none;
-}
-
-$loadersize: 1em;
-
-.loader-border{ 
-  width: 1.5em; 
-  height: 1.5em;   
-  background: linear-gradient(94.23deg,#5374fa 12.41%,#fd9179 52.55%,#ff6969 89.95%); 
-  border-radius: 50%; 
-  margin: 0; 
-  padding: 0;  
-  display: flex; 
-  justify-content: center;  
-  align-content: center;  
-  align-items: center;
-  animation: spinning .5s infinite;
-}  
-
-.loader-inner { 
-  min-width: $loadersize; 
-  min-height: $loadersize;   
-  padding: 0;   
-  margin: 0; 
-  border: 0;
-  background: $background; 
-  border-radius: 50%;  
-  // transform: translateY(20%);
-} 
-
-@keyframes spinning {
-  from { 
-    transform: rotate(0);
-  } 
-  to { 
-   transform: rotate(360deg); 
-  }
 }
 
 .errors { 
