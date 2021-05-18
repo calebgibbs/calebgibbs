@@ -14,7 +14,14 @@
         <label for="message" class="message-label">Message</label>
       </div> 
       <div>
-        <button type="submit">Send</button>
+        <button type="submit" id="submit-button" @click="validateFrom">
+          <span id="send-text">Send</span> 
+          <span id="loading" class="hidden">
+            <div class="loader-border">
+              <div class="loader-inner"></div>
+            </div>
+          </span>
+        </button>
       </div>  
       <div>
         <ul class="errors">
@@ -39,18 +46,55 @@
       }
     }, 
     methods: {
+      validateFrom(e) {
+        this.errors = [] 
+        
+        //name 
+        if(!this.name) {
+          this.errors.push('Please enter your name')
+        } else if(!this.name.match(nameRegex)) {
+          this.errors.push('Please enter a valid name')
+        }
+        //email 
+        if(!this.email){
+          this.errors.push('Please enter your email address')
+        }else if(!this.email.match(emailRegex)) {
+          this.errors.push('Please enter a valid email address')
+        }
+        //message 
+        if(!this.message){
+          this.errors.push('Please add a message')
+        }
+
+        if(errors) {
+          e.preventDefault()
+        }
+      },
       submitForm(e) {      
-        emailjs.sendForm('service_s1w9a4i', 'template_6bfqpxu', e.target, 'user_cXVYnoDAnK7U0qBsC9viA')
+        document.getElementById('send-text').classList.add('hidden') 
+        document.getElementById('loading').classList.remove('hidden') 
+        document.getElementById('submit-button').classList.add('selected')
+
+        emailjs.sendForm('service_s1w9a4i', 'template_6bfqpxu', e.target, 'user_cXVYnoDAnK7U0qBsC9viA') 
+        //remove text and add the loader  
         .then((result) => {
             console.log('SUCCESS!', result.status, result.text) 
-            //add sending class  
+            //add sending class   
             document.getElementById('theform').classList.add('sending')
             document.getElementById('name').value = ''
             document.getElementById('email').value = ''
-            document.getElementById('message').value = ''
+            document.getElementById('message').value = ''  
+            document.getElementById('send-text').classList.remove('hidden') 
+            document.getElementById('loading').classList.add('hidden')
+            document.getElementById('submit-button').classList.remove('selected')
+            //remove loader 
         }, (error) => {
-            console.log('FAILED...', error)
-        });
+            console.log('FAILED...', error)  
+            document.getElementById('send-text').classList.remove('hidden') 
+            document.getElementById('loading').classList.add('hidden')
+            document.getElementById('submit-button').classList.remove('selected') 
+            this.errors.push('Something went wrong. Pleas try again later')
+        }) 
       }
     }
   }
@@ -158,7 +202,51 @@ button {
     color: #000; 
     cursor: pointer;
   }
+}   
+
+.selected { 
+  border: 2px solid rgba(0,0,0,1);
+}
+
+.hidden { 
+  display: none;
+}
+
+$loadersize: 1em;
+
+.loader-border{ 
+  width: 1.5em; 
+  height: 1.5em;   
+  background: linear-gradient(94.23deg,#5374fa 12.41%,#fd9179 52.55%,#ff6969 89.95%); 
+  border-radius: 50%; 
+  margin: 0; 
+  padding: 0;  
+  display: flex; 
+  justify-content: center;  
+  align-content: center;  
+  align-items: center;
+  animation: spinning .5s infinite;
+}  
+
+.loader-inner { 
+  min-width: $loadersize; 
+  min-height: $loadersize;   
+  padding: 0;   
+  margin: 0; 
+  border: 0;
+  background: $background; 
+  border-radius: 50%;  
+  // transform: translateY(20%);
 } 
+
+@keyframes spinning {
+  from { 
+    transform: rotate(0);
+  } 
+  to { 
+   transform: rotate(360deg); 
+  }
+}
 
 .errors { 
   padding: 0; 
