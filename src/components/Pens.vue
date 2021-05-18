@@ -1,5 +1,6 @@
 <template>
-  <div class="pens-grid">   
+  <div>
+    <div class="pens-grid">   
     <div v-for="pen in pens.items" :key="pen.url">
       <a target="_blank" :href="pen.link">
         <div class="pen" :style="{ 'background-image': 'url(' + pen.thumbnail + ')' }" >
@@ -12,10 +13,16 @@
           </div>
         </div>
       </a>
-    </div>
+    </div> 
+  </div> 
+  <div id="loading" class="hidden">
+    <Loader size="4em" border="1em" />
+  </div>
   </div>
 </template>
 <script>  
+  import Loader from './Loader'
+  
   const publicFeed = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fcodepen.io%2Fcalebgibbs%2Fpublic%2Ffeed' 
   const popularFeed = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fcodepen.io%2Fcalebgibbs%2Fpopular%2Ffeed%2F'
 
@@ -31,6 +38,9 @@
       .then(res => res.json()) 
       .then(data => this.pens = data) 
       .catch(err => console.log(err.message)) 
+    }, 
+    components: {
+      Loader
     }
   }
 </script>
@@ -39,6 +49,15 @@
 @import '../assets/styles/mediaqueries'; 
 
 $speed: .2s;
+
+#loading {
+  width: calc(4em + 1em); 
+  margin: 0 auto;
+} 
+
+.hidden {
+  display: none;
+}
 
 .pens-grid { 
   display: grid;  
