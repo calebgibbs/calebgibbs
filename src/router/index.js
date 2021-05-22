@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue' 
 import Playground from '../views/Playground' 
 import Contact from '../views/Contact'
+import Cecil from '../views/Cecil'
+
 
 Vue.use(VueRouter)
 
@@ -21,6 +23,11 @@ const routes = [
     path: '/contact', 
     name: 'Contact', 
     component: Contact
+  }, 
+  {
+    path: '/cecil', 
+    name: 'Cecil', 
+    component: Cecil
   }
 ]
 

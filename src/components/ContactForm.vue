@@ -74,7 +74,7 @@
         document.getElementById('loading').classList.remove('hidden') 
         document.getElementById('submit-button').classList.add('selected')
 
-        emailjs.sendForm('service_s1w9a4i', 'template_6bfqpxu', e.target, 'user_cXVYnoDAnK7U0qBsC9viA') 
+        emailjs.sendForm('service_ydr28uj', 'template_6bfqpxu', e.target, 'user_cXVYnoDAnK7U0qBsC9viA') 
         //remove text and add the loader  
         .then((result) => {
             console.log('SUCCESS!', result.status, result.text) 

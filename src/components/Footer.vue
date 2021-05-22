@@ -4,7 +4,7 @@
       <div class="footer-links">
         <ul>
           <li><a href="https://github.com/calebgibbs/" target="_blank"><img width="25" src="../assets/images/logo/github.png"></a></li> 
-          <li><a href="mailto:calebgibbs@me.com" target="_blank"><img width="25" src="../assets/images/logo/mail.png"></a></li> 
+          <li><a href="mailto:hey@calebgibbs.tech" target="_blank"><img width="25" src="../assets/images/logo/mail.png"></a></li> 
           <li><a href="https://www.linkedin.com/in/caleb-g-b47285a9/" target="_blank"><img width="25" src="../assets/images/logo/linkdin.png"></a></li>
         </ul>
       </div> 
