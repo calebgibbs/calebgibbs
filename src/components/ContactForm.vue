@@ -80,9 +80,9 @@
             console.log('SUCCESS!', result.status, result.text) 
             //add sending class   
             document.getElementById('theform').classList.add('sending')
-            document.getElementById('name').value = ''
-            document.getElementById('email').value = ''
-            document.getElementById('message').value = ''  
+            document.getElementById('name').value = null
+            document.getElementById('email').value = null
+            document.getElementById('message').value = null  
             document.getElementById('send-text').classList.remove('hidden') 
             document.getElementById('loading').classList.add('hidden')
             document.getElementById('submit-button').classList.remove('selected')

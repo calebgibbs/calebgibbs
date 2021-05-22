@@ -2,7 +2,7 @@
   <div>
     <h1 class="gradient-title">Cecil the cow painting</h1> 
     <div class="image">
-      <img src="../assets/images/other/cecil.jpg" width="20%" alt="">
+      <img src="../assets/images/other/cecil.jpg" alt="">
     </div>
   </div>
 </template>
