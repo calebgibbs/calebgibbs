@@ -11,7 +11,10 @@
   export default {
     components: {
       Pens
-    }
+    },
+    metaInfo: {
+    title: 'Playground'
+  }
   }
 </script>
 

@@ -16,7 +16,9 @@
         <li><router-link to="/contact" @click.native="closeMenu">Contact</router-link></li>
       </ul>
     </div>  
-    <div class="language-toggle"></div> 
+    <div class="lang">
+      <a href="#">中文</a>
+    </div> 
   </div>
 </template>
 
@@ -66,13 +68,21 @@ li {
 }
 
 .logo {
-  // font-weight: bold; 
   color: #fff;  
   font-size: 1.5rem; 
   opacity: 1;
 }  
 
-$link-padding: 1.4em;
+$link-padding: 1.4em; 
+
+.lang {
+  color: #fff; 
+  padding: 0 $link-padding; 
+  opacity: .8;
+  &:hover {
+    opacity: 1;
+  }
+}
 
 a { 
   color:#f5f5f7; 

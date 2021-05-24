@@ -9,7 +9,9 @@
 
 <script>
   export default {
-    
+    metaInfo: {
+      title: 'Cecil the cow'
+    }
   }
 </script>
 

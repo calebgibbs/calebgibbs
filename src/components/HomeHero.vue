@@ -1,5 +1,6 @@
 <template>
   <div class="hero">
+    <!-- <v-vanta effect="waves" :options=options></v-vanta> -->
     <div class="title">
       <h1 class="gradient-title">Caleb Gibbs</h1> 
       <h3 class="gradient-title">Web Developer</h3>
@@ -14,10 +15,26 @@
 </template> 
 
 <script>
+  // import VVanta from '@/veu-vanta'
   export default {
-    
+    // components: {
+    //   VVanta
+    // }, 
+    // data() {
+    //   return {
+    //     options: {
+    //       mouseControls: true,
+    //       touchControls: true,
+    //       minHeight: 500.00,
+    //       minWidth: 200.00,
+    //       scale: 1.00,
+    //       scaleMobile: 1.00
+    //     }
+    //   }
+    // }
   }
 </script>
+
 
 
 <style lang="scss" scoped>

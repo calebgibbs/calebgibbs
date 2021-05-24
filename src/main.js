@@ -1,13 +1,17 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store' 
+import router from './router' 
+import Meta from 'vue-meta'
 
 import './assets/styles/main.scss'
 import ScollAnimation from './directives/scrollanimation'
 
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false 
+
+Vue.use(Meta, {
+  refreshOnceOnNavigation: true
+})
 
 //filters 
 Vue.filter('limit-10', function(value){
@@ -19,6 +23,5 @@ Vue.directive('scrollanimation', ScollAnimation)
 
 new Vue({
   router,
-  store,
   render: h => h(App)
 }).$mount('#app')

@@ -10,6 +10,9 @@
   export default {
     components: {
       ContactForm
+    },
+    metaInfo: {
+      title: 'Contact'
     }
   }
 </script>

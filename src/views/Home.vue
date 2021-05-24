@@ -26,6 +26,10 @@
       ContactForm, 
       HomeAbout, 
       Skills
+    },
+    metaInfo: {
+      title: 'Caleb Gibbs',
+      description: 'I’m a front-end web developer based in Wellington, New Zealand. I specialise in making your projects come to life through code for you and your customers.'
     }
   }
 </script>
