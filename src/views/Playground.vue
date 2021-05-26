@@ -13,8 +13,8 @@
       Pens
     },
     metaInfo: {
-    title: 'Playground'
-  }
+      title: 'Playground'
+    }
   }
 </script>
 
