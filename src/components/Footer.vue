@@ -6,7 +6,10 @@
           <li><a href="https://github.com/calebgibbs/" target="_blank"><img width="25" src="../assets/images/logo/github.png"></a></li> 
           <li><a href="mailto:hey@calebgibbs.tech" target="_blank"><img width="25" src="../assets/images/logo/mail.png"></a></li> 
           <li><a href="https://www.linkedin.com/in/caleb-g-b47285a9/" target="_blank"><img width="25" src="../assets/images/logo/linkdin.png"></a></li>
-        </ul>
+        </ul> 
+        <div class="email">
+          <a href="mailto:hey@calebgibbs.tech">hey@calebgibbs.tech</a>
+        </div>
       </div> 
       <div class="footer-copy">
         <span>&copy; Caleb Gibbs {{ new Date().getFullYear() }}</span>
@@ -54,7 +57,7 @@ a {
   color: inherit; 
   text-decoration: none; 
   opacity: .8;  
-  transition: opacity .1s ease-in-out;
+  transition: opacity .1s ease-in-out; 
   &:hover { 
     opacity: 1;
   }
@@ -68,7 +71,12 @@ span {
   font-size: .8em; 
   opacity: .8; 
   transform: translateY(50%);
-} 
+}  
+
+.email { 
+  margin-top: 1.2rem;
+  text-align: center; 
+}
 
 img { 
   width: -50%;
