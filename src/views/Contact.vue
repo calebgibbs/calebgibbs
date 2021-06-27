@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h1 class="gradient-title">Let's start talking.</h1>
+    <h1 class="gradient-title">Let's start talking</h1>
     <ContactForm/> 
   </div>
 </template>
