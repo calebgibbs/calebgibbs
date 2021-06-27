@@ -4,7 +4,7 @@
       <h2 class="gradient-title">Hi, I'm Caleb</h2>
     </div> 
     <div class="wrapper" v-scrollanimation>
-      <p>I’m a front-end web developer based in Wellington, New Zealand. I specialise in making your projects come to life through code for you and your customers.</p> 
+      <p>I’m a freelance front-end web developer based in Wellington, New Zealand. I specialise in making your projects come to life through code for you and your customers.</p> 
     </div>
   </div>
 </template>
@@ -53,11 +53,11 @@ p {
 
 .enter { 
   h2 { 
-    animation: fadeup 1s ease-in forwards;
+    animation: fadeup .3s ease-in forwards;
   } 
   p {  
-    animation: fadeup 800ms ease-in forwards; 
-    animation-delay: .5s;
+    animation: fadeup .3s ease-in forwards; 
+    animation-delay: .3s;
   }
 }  
 
