@@ -23,4 +23,8 @@ pnpm-debug.log*
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+*.sw? 
+
+#cutom files
+
+todo.todo
