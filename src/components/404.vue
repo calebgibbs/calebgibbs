@@ -2,7 +2,7 @@
   <div>
     <h1 class="gradient-title">404</h1>  
     <br>
-    <h2>Page not found.</h2>
+    <h2>Sorry, this page can't be found.</h2>
   </div>
 </template>
 

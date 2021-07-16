@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <h1 class="gradient-title">Let's start talking</h1>
-    <ContactForm/> 
+    <ContactForm/>  
   </div>
 </template>
 
