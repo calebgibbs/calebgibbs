@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h1 class="gradient-title">Recent CodePens</h1>
+    <h1 class="gradient-title title-padding">Recent CodePens</h1>
     <Pens/>
   </div>
 </template>
@@ -20,8 +20,6 @@
 
 <style lang="scss" scoped>
 h1 { 
-  padding-top: 1em; 
-  padding-bottom: 1em; 
   font-weight: lighter; 
   text-align: center;
 }

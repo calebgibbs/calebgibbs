@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h1 class="gradient-title">Let's start talking</h1>
+    <h1 class="gradient-title title-padding">Let's start talking</h1>
     <ContactForm/>  
   </div>
 </template>
@@ -21,6 +21,6 @@
 h1 { 
   text-align: center; 
   font-weight: lighter; 
-  margin-top: 4em;
+  // margin-top: 4em;
 }
 </style>
