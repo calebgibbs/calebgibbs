@@ -20,6 +20,38 @@
       return {  
         skills: [ 
           {
+            title: 'Vue.js', 
+            img: 'vue.png'
+          }, 
+          {
+            title: 'Node.js', 
+            img: 'node.png'
+          }, 
+          {
+            title: 'Laravel', 
+            img: 'laravel.png'
+          }, 
+          {
+            title: 'PHP', 
+            img: 'php.png'
+          }, 
+          { 
+            title: 'WordPress', 
+            img: 'wordpress.png'
+          }, 
+          { 
+            title: 'MongoDB', 
+            img: 'mongo.png'
+          },
+          {
+            title: 'MySQL', 
+            img: 'mysql.png'
+          }, 
+          {
+            title: 'Git', 
+            img: 'git.png'
+          },
+          {
             title: 'HTML', 
             img: 'html.png'
           }, 
@@ -32,41 +64,13 @@
             img: 'js.png'
           },
           {
-            title: 'Sass', 
-            img: 'sass.png'
-          },
-          {
             title: 'Responsive', 
             img: 'responsive.png'
           },
           {
-            title: 'Vue.js', 
-            img: 'vue.png'
-          },  
-          {
-            title: 'Node.js', 
-            img: 'node.png'
-          },
-          { 
-            title: 'WordPress', 
-            img: 'wordpress.png'
+            title: 'Sass', 
+            img: 'sass.png'
           }, 
-          {
-            title: 'PHP', 
-            img: 'php.png'
-          }, 
-          {
-            title: 'Laravel', 
-            img: 'laravel.png'
-          }, 
-          {
-            title: 'MySQL', 
-            img: 'mysql.png'
-          },
-          { 
-            title: 'MongoDB', 
-            img: 'mongo.png'
-          },  
           {
             title: 'Adobe Photoshop', 
             img: 'photoshop.png'
@@ -78,11 +82,7 @@
           {
             title: 'Adobe Indesign', 
             img: 'indesign.png'
-          }, 
-          {
-            title: 'Git', 
-            img: 'git.png'
-          }
+          }      
         ]
       }
     }
