@@ -18,7 +18,7 @@
   export default {
     data() { 
       return {  
-        skills: [ 
+        skills: [  
           {
             title: 'Vue.js', 
             img: 'vue.png'
@@ -163,14 +163,24 @@ li {
 }
 
 .before-enter > img{ 
-  opacity: 0; 
   transform: translateY(7em);
-} 
+}  
 
-.enter > img{ 
-  opacity: 1; 
-  transform: translateY(0);
-} 
+
+// @for $i from 1 through 16 { 
+//   li:nth-child(6) { 
+//     .enter > img{ 
+//       transform: translateY(0);
+//     }
+//   }
+// } 
+
+
+  .enter > img{ 
+    transform: translateY(0);
+  }
+
+
 
 @include touch { 
   span { 
