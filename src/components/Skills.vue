@@ -39,13 +39,17 @@
             title: 'WordPress', 
             img: 'wordpress.png'
           }, 
+          {
+            title: 'MySQL', 
+            img: 'mysql.png'
+          },
           { 
             title: 'MongoDB', 
             img: 'mongo.png'
           },
           {
-            title: 'MySQL', 
-            img: 'mysql.png'
+            title: 'Firebase', 
+            img: 'firebase.png'
           }, 
           {
             title: 'Git', 
@@ -64,13 +68,13 @@
             img: 'js.png'
           },
           {
-            title: 'Responsive', 
-            img: 'responsive.png'
-          },
-          {
             title: 'Sass', 
             img: 'sass.png'
           }, 
+          {
+            title: 'Responsive', 
+            img: 'responsive.png'
+          },
           {
             title: 'Adobe Photoshop', 
             img: 'photoshop.png'
