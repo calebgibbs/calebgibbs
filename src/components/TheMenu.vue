@@ -10,14 +10,15 @@
       <ul>
         <li><router-link to="/" @click.native="closeMenu">Home</router-link></li>
         <li><a href="/#see-more">About</a></li>
-        <!-- <li><router-link to="/blog" @click.native="closeMenu">Blog</router-link></li> -->
-        <!-- <li><router-link to="/projects" @click.native="closeMenu">Projects</router-link></li>  -->
+        <li><router-link to="/blog" @click.native="closeMenu">Blog</router-link></li>
+        <li><router-link to="/projects" @click.native="closeMenu">Projects</router-link></li> 
         <li><router-link to="/playground" @click.native="closeMenu">Playground</router-link></li>
-        <li><router-link to="/contact" @click.native="closeMenu">Contact</router-link></li>
+        <li><router-link to="/contact" @click.native="closeMenu">Contact</router-link></li> 
+        <li><router-link to="/contact" @click.native="closeMenu" >Admin Console</router-link></li> 
       </ul>
     </div>  
     <div class="lang">
-      <!-- <a href="#">中文</a> -->
+      <a href="#">中文</a>
     </div> 
   </div>
 </template>
@@ -42,7 +43,8 @@
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/styles/mediaqueries';
+@import '../assets/styles/mediaqueries'; 
+@import '../assets/styles/colours';
 
 .nav {
   display: flex;   

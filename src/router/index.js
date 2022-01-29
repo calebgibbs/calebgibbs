@@ -3,7 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue' 
 import Playground from '../views/Playground' 
 import Contact from '../views/Contact'
-import Cecil from '../views/Cecil' 
+import Cecil from '../views/Cecil'  
+import Login from '../views/Login' 
+import Projects from '../views/Projects'
 import NotFound from '../components/404'
 
 
@@ -30,6 +32,16 @@ const routes = [
     name: 'Cecil', 
     component: Cecil
   }, 
+  {
+    path: '/edit', 
+    name: 'Login', 
+    component: Login
+  },
+  {
+    path: '/projects', 
+    name: 'Projects', 
+    component: Projects
+  },
   {
     path: '*',
     name: 'NotFound',
