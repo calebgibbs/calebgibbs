@@ -33,7 +33,7 @@ const routes = [
     component: Cecil
   }, 
   {
-    path: '/edit', 
+    path: '/login', 
     name: 'Login', 
     component: Login
   },
