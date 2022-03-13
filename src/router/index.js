@@ -5,7 +5,8 @@ import Playground from '../views/Playground'
 import Contact from '../views/Contact'
 import Cecil from '../views/Cecil'  
 import Login from '../views/Login' 
-import Projects from '../views/Projects'
+import Projects from '../views/Projects' 
+import Admin from '../views/Admin'
 import NotFound from '../components/404'
 
 
@@ -41,6 +42,11 @@ const routes = [
     path: '/projects', 
     name: 'Projects', 
     component: Projects
+  }, 
+  {
+    path: '/admin', 
+    name: 'Admin', 
+    component: Admin
   },
   {
     path: '*',

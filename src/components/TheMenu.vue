@@ -14,7 +14,7 @@
         <li><router-link to="/projects" @click.native="closeMenu">Projects</router-link></li> 
         <li><router-link to="/playground" @click.native="closeMenu">Playground</router-link></li>
         <li><router-link to="/contact" @click.native="closeMenu">Contact</router-link></li> 
-        <!-- <li><router-link to="/contact" @click.native="closeMenu" >Admin Console</router-link></li>  -->
+        <li><router-link to="/admin" @click.native="closeMenu" >Admin Console</router-link></li> 
       </ul>
     </div>  
     <div class="lang">
